@@ -1,0 +1,36 @@
+<strong>Category name:</strong>
+  <%= @category.name %>
+  <strong>&nbsp;&nbsp;&nbsp;&nbsp;Description:</strong>
+  <%= @category.description %>
+
+
+  <% @tasks.each do |t| %>
+
+  <div class="sticky-container">
+  <div class="sticky-outer">
+    <div class="sticky">
+      <svg width="0" height="0">
+        <defs>
+          <clipPath id="stickyClip" clipPathUnits="objectBoundingBox">
+            <path
+              d="M 0 0 Q 0 0.69, 0.03 0.96 0.03 0.96, 1 0.96 Q 0.96 0.69, 0.96 0 0.96 0, 0 0"
+              stroke-linejoin="round"
+              stroke-linecap="square"
+            />
+          </clipPath>
+        </defs>
+      </svg>
+      <div class="card-container">
+        <div class="sticky-content">
+            <table class="tb">
+              <tr><th><%= t.title %></th></tr>
+              <tr><td><%= t.details %></td></tr>
+            </table>    
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <% end %><br>
+<br><%= link_to 'Back', tasks_path, class: "badge badge-info" %>

@@ -1,0 +1,31 @@
+
+<div class="container">
+
+    <div class="navbar ">
+        <nav class="navbar navbar-default">
+            <%= image_tag 'to-do-list (2).png', class:"img" %>
+              
+                    <%=link_to 'View all tasks',  tasks_path, class: "badge badge-light" %>
+                    <%=link_to 'Categories',  categories_path,  class:"badge badge-pill badge-secondary"%>
+
+
+        </nav>
+    </div><br><br>
+
+<%= form_with class: "form", scope: :category, url: create_category_path, local: true do |form| %>
+
+<h1>Don't just talk, act.</h1>
+<h6 class="text-muted">Create category</h6>
+    <%=form.label :name%> : <br>
+    <%=form.text_field :name, class: "form-control" %>
+
+    <%=form.label :description%> :<br>
+    <%=form.text_area :description, class: "form-control" %><br>
+
+    <div class="col text-center">
+        <%= form.submit :Save, class: "btn btn-success"%>
+    </div>
+<%end%>
+
+    <%= image_tag '5272.png', class: "vector img-responsive"%>
+</div>

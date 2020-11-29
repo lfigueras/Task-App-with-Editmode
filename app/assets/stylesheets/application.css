@@ -1,0 +1,185 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+margin: 20px;
+background-image: url('background.png');
+background-position: center;
+background-size: cover;
+background-attachment: fixed;
+}
+h3{
+    text-align: center;
+}
+.form{ 
+    float: left; 
+}
+.flexi{
+    display: flex;
+   justify-content: flex-start;
+}
+.flexi2{
+    margin-right:10px;
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+  }
+body{
+    background: none;
+}
+.navbar{
+    width: 100%;
+
+    /* display: flex; */
+    /* align-items: center; */
+}
+.img{
+    width: 50px;
+    display: flex;
+    align-self: flex-start;
+}
+span{
+    text-align: center;
+}
+
+nav ul li {
+    /* display: inline-block; */
+    list-style: none;
+    /* margin: 0px 20px ; */
+   
+}
+input[type="text"],
+select.form-control {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+  outline: 0;
+
+}
+
+input[type="text"]:focus,
+select.form-control:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+
+.btn-success {background-image: linear-gradient(to right, #ff6e7f 0%, #bfe9ff  51%, #ff6e7f  100%)}
+.btn-success {
+   border: none;
+   margin: 10px;
+   padding: 14px 40px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;            
+   box-shadow: 0 0 20px #eee;
+   border-radius: 10px;
+ }
+
+ .btn-success:hover {
+   background-position: right center; /* change the direction of the change here */
+   color: #fff;
+   text-decoration: none;
+ }
+ .vector{
+     height: 70%;
+     position: fixed;
+     bottom: 0;
+     right: 50px;
+     background-attachment: fixed;
+     z-index:-1;
+
+ }
+.select-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+/* stickey notes */
+.sticky-container {
+    max-width: 270px;
+    position: relative;
+    font-size: small;
+    overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  }
+  
+  .sticky-outer {
+    display: flex;
+    padding-top: 32.5925926%;
+    position: relative;
+    width: 100%;
+  }
+  
+  .sticky {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+  /* Shadow behind the sticky note */
+  .sticky:before {
+    box-shadow: -2px 2px 15px 0 rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.25);
+    content: '';
+    width: 90%;
+    left: 5px;
+    height: 83%;
+    position: absolute;
+    top: 30%;
+  }
+  
+  /* The sticky note itself */
+  .sticky-content {
+    background: linear-gradient(
+      180deg,
+      rgba(187, 235, 255, 1) 0%,
+      rgba(187, 235, 255, 1) 12%,
+      rgba(170, 220, 241, 1) 75%,
+      rgba(195, 229, 244, 1) 100%
+    );
+    width: 100%;
+    height: 100%;
+    padding-left: 30px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-family: 'Caveat';
+    font-size: large;
+    clip-path: url(#stickyClip);
+  }
+  
+  /* Add responsiveness */
+  @media screen and (min-width: 640px) {
+    .sticky:before {
+      height: 79%;
+      width: 90%;
+    }
+  }
+  
+  @media screen and (min-width: 768px) {
+    .sticky:before {
+      height: 75%;
+      width: 90%;
+    }
+    
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .sticky:before {
+      height: 73%;
+      width: 90%;
+    }
+    
+  }
