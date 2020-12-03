@@ -1,7 +1,9 @@
+<div class="display-name">
 <strong>Category name:</strong>
   <%= @category.name %>
   <strong>&nbsp;&nbsp;&nbsp;&nbsp;Description:</strong>
   <%= @category.description %>
+</div>
 
 
   <% @tasks.each do |t| %>
@@ -23,6 +25,7 @@
       <div class="card-container">
         <div class="sticky-content">
             <table class="tb">
+              <tr><th><h6>Deadline: <%=t.set_date%></h6> </th><tr>
               <tr><th><%= t.title %></th></tr>
               <tr><td><%= t.details %></td></tr>
             </table>    
@@ -33,4 +36,4 @@
 </div>
 
   <% end %><br>
-<br><%= link_to 'Back', tasks_path, class: "badge badge-info" %>
+<br><%= link_to 'Back', category_tasks_path(:category_id), class: "badge badge-info" %>
