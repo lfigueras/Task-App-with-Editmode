@@ -3,11 +3,25 @@
     <div class="navbar ">
         <nav class="navbar navbar-default">
             <%= image_tag 'to-do-list (2).png', class:"img" %>
-                    <%=link_to 'View all tasks',  tasks_path, class: "badge badge-light" %>
+                    <%=link_to 'View all tasks',  category_tasks_path, class: "badge badge-light" %>
                     <%=link_to 'Categories',  categories_path,  class:"badge badge-pill badge-secondary"%>
         </nav>
     </div><br><br>
-<%= form_with class: "form", scope: :task, url: create_task_path, local: true do |form| %>
+<%= form_with model: [@category, @task],  :url => {:controller => 'tasks', :action => 'create'}, class: "form",  local: true do |form| %>
+ 
+ <% if @task.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@task.errors.count, "error") %> prohibited
+        this task from being saved:
+      </h2>
+      <ul>
+        <% @task.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
 <h4>The secret of getting ahead is getting started.</h4>
 <h6 class="text-muted">Create task</h6>

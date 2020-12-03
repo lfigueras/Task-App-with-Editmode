@@ -1,9 +1,8 @@
   
 <h3>Edit your task.</h3>
  
-<%= form_with(model: @task, local: true) do |form| %>
- 
-  <% if @task.errors.any? %>
+<%= form_with model: @task, url:  edit_task_path, local: true do |form| %>
+   <% if @task.errors.any? %>
     <div id="error_explanation">
       <h2>
         <%= pluralize(@task.errors.count, "error") %> prohibited
@@ -13,7 +12,7 @@
         <% @task.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
-      </ul>
+      </ul> 
     </div>
   <% end %>
  
@@ -30,10 +29,7 @@
   
 <div class="flexi">
     <div class="flexi2"><%= form.submit :Update, class: "btn btn-warning", style:"font-size:10px; "%></div>
-    <div class="flexi2"><%= link_to 'Back', task_path, class: "btn btn-primary", style:"font-size:10px;"%></div>
+    <div class="flexi2"><%= link_to 'Back', category_tasks_path(:category_id), class: "btn btn-primary", style:"font-size:10px;"%></div>
 </div>
     
-     
- 
- 
 <% end %>
