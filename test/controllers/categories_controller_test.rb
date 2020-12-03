@@ -24,13 +24,16 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
     get category_url(@category)
     assert_response :success
   end
-  test "should get update" do
-    get category_url(@category)
-    assert_response :success
+
+  test "should post update" do
+    patch category_url(@category), params:{category: {name:'sample updated', description:'descdesc'}}
+    assert_response :redirect
   end
 
-  test "should get destroy" do
-    get  category_url(@category)
-    assert_response :success
+  test 'should delete category' do
+    category = Category.find_by(name:@category.name)
+    assert_difference "Category.count", -1 do
+      delete category_path(category)
+    end
   end
 end
