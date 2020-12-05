@@ -107,6 +107,9 @@ background: transparent;
   justify-content: space-between;
 
 }
+.show{
+  margin: 200px;
+}
 /* stickey notes */
 /* .main-container{
   margin: 0 auto;
