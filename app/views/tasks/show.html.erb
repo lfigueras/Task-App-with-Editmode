@@ -5,8 +5,6 @@
   <%= @category.description %>
 </div>
 
-
-  <% @tasks.each do |t| %>
  
   <div class="sticky-container">
   <div class="sticky-outer">
@@ -26,8 +24,8 @@
         <div class="sticky-content">
             <table class="tb">
               <tr><th><h6>Deadline: <%=t.set_date%></h6> </th><tr>
-              <tr><th><%= t.title %></th></tr>
-              <tr><td><%= t.details %></td></tr>
+              <tr><th><%= @task.title %></th></tr>
+              <tr><td><%= @.details %></td></tr>
             </table>    
         </div>
       </div>
@@ -35,5 +33,5 @@
   </div>
 </div>
 
-  <% end %><br>
+<br>
 <br><%= link_to 'Back', category_tasks_path(:category_id), class: "badge badge-info" %>
