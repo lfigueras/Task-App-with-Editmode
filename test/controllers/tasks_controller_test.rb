@@ -1,10 +1,13 @@
 require 'test_helper'
 
 class TasksControllerTest < ActionDispatch::IntegrationTest
+    include Devise::Test::IntegrationHelpers
     setup do
         @category = Category.create(name: 'Sample1', description: 'Description')
         @task = Task.create(title: 'Sample1', details: 'More Details',  category_id: @category.id, set_date: "2020-12-02")
-
+        get '/users/sign_in'
+        sign_in users(:one)
+        post new_user_session_url
     end
 
     test "should get new" do

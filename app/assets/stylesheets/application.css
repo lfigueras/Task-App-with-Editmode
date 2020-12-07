@@ -107,6 +107,9 @@ background: transparent;
   justify-content: space-between;
 
 }
+.show{
+  margin: 200px;
+}
 /* stickey notes */
 /* .main-container{
   margin: 0 auto;
@@ -115,18 +118,11 @@ background: transparent;
 
   max-width: 500px;
   position: relative;
-  font-size: small;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
   hyphens: auto;
-  display: grid;
-grid-row-gap: 50px;
 margin: 0 auto;
 }
-.card-container{
-  display: grid;
-  grid-row-gap: 50px;
-}
+
+
 
 .sticky-outer {
   display: flex;
@@ -169,11 +165,12 @@ margin: 0 auto;
   display: flex;
   justify-content: left;
   align-items: center;
-  font-family: 'Caveat';
-  font-size: x-large;
+  font-family: 'Indie Flower';
+  font-size: 15px;
   clip-path: url(#stickyClip);
 
 }
+
 
 /* Add responsiveness */
 @media screen and (min-width: 640px) {

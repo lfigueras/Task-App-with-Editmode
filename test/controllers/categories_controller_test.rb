@@ -1,11 +1,15 @@
 require 'test_helper'
 
 class CategoriesControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
   setup do
     @category = Category.create(name: 'Sample1', description: 'Description')
+    get '/users/sign_in'
+    sign_in users(:one)
+    post new_user_session_url
   end
   
-  test "should get new" do
+  test "should get index" do
     get new_category_url
     assert_response :success
   end

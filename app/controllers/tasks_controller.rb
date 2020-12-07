@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  before_action :authenticate_user!
   def index
     @tasks = Task.all
   end
@@ -19,8 +20,7 @@ class TasksController < ApplicationController
   end
 
   def show
-      @task = Task.find(params[:id])
-      @categories = @task.categories.all      
+      @task = Task.find(params[:id])  
   end
 
   def edit

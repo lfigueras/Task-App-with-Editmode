@@ -1,0 +1,40 @@
+<% if user_signed_in? %>
+  
+<%= link_to('Logout', destroy_user_session_path, method: :delete, class: "badge badge-pill badge-danger" ) %>       
+
+<% else %>
+  <li>
+  <%= link_to('Login', new_user_session_path) %>  
+  </li>
+<% end %>
+
+<div class="show">
+    <div class="sticky-container">
+    <div class="sticky-outer">
+        <div class="sticky">
+        <svg width="0" height="0">
+            <defs>
+            <clipPath id="stickyClip" clipPathUnits="objectBoundingBox">
+                <path
+                d="M 0 0 Q 0 0.69, 0.03 0.96 0.03 0.96, 1 0.96 Q 0.96 0.69, 0.96 0 0.96 0, 0 0"
+                stroke-linejoin="round"
+                stroke-linecap="square"
+                />
+            </clipPath>
+            </defs>
+        </svg>
+        <div class="card-container">
+            <div class="sticky-content">
+                <table class="tb">
+                <tr><th><h6>Deadline: <%=@task.set_date%></h6> </th><tr>
+                <tr><th><%= @task.title %></th></tr>
+                <tr><td><%= @task.details %></td></tr>
+                </table>    
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+<%= link_to 'Back', category_tasks_path(:category_id), class: "badge badge-info" %>

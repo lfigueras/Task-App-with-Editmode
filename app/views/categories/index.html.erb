@@ -1,3 +1,15 @@
+<% if user_signed_in? %>
+  
+<%= link_to('Logout', destroy_user_session_path, method: :delete, class: "badge badge-pill badge-danger" ) %>       
+
+<% else %>
+  <li>
+  <%= link_to('Login', new_user_session_path) %>  
+  </li>
+<% end %>
+
+  
+
 <h3>Categories</h3><br>
 <table class="table table-hover">
  <thead class="thead-dark">
@@ -12,14 +24,12 @@
  
      <% @category.each do |c| %>
    <tr>
-      <td class="desc"><h4><%= c.name %></h4></td>
+      <td class="desc"><h4><%=  c.name %></h4></td>
         <td class="desc"><h6><%= c.description %></h6></td>
       <td><%= link_to 'Edit', edit_category_path(c), class: "badge badge-pill badge-warning"%></td>
       <td><%= link_to  'Delete', category_path(c),
               method: :delete,
               data: { confirm: 'Are you sure you want this to delete?' }, class: "badge badge-pill badge-danger" %><td>
-      
-      
     </tr>
   <% end %>
 </table>
@@ -27,4 +37,4 @@
 
 <%= link_to 'New Category', new_category_path, class: "badge badge-info" %>
 <%= link_to 'Create new task', new_category_task_path(:category_id), class: "badge badge-info" %>
-<%=link_to 'View all tasks',  category_tasks_path(:category_id), class: "badge badge-info" %>
+<%=link_to 'View all tasks today',  category_tasks_path(:category_id), class: "badge badge-info" %>
