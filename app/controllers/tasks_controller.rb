@@ -7,10 +7,12 @@ class TasksController < ApplicationController
   def new
     @task = Task.new
     @categories = Category.all
+    
   end
 
   def create
     @task = Task.new(task_params)
+    @task.user_id = current_user.id
     if @task.save
      redirect_to category_tasks_path
 
