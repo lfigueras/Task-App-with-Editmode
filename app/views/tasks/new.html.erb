@@ -32,8 +32,6 @@
       </ul>
     </div>
   <% end %>
-
-<h4>The secret of getting ahead is getting started.</h4>
 <h6 class="text-muted">Create task</h6>
     <%=form.label :title%> : <br>
     <%=form.text_field :title, class: "form-control", placeholder: "Type here." %>
@@ -44,7 +42,7 @@
    <div class="select-container">
         <div class="select-child">
             <%= form.label :category %>
-            <%= form.select :category_id, @categories.map{ |c| [c.name, c.id] } %>
+            <%= form.select :category_id, @categories.filter_map{ |c| [c.name, c.id] if c.user_id === current_user.id  } %>
         </div>
         <div class="select-child">
             <%= form.label :date_deadline%>
