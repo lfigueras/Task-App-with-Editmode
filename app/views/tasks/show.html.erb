@@ -7,6 +7,8 @@
   <%= link_to('Login', new_user_session_path) %>  
   </li>
 <% end %>
+
+<%= link_to 'Back', category_tasks_path(:category_id), class: "badge badge-info" %>
 <%= render "banner" %>
 <div class="show">
     <div class="sticky-container">
@@ -36,5 +38,3 @@
     </div>
     </div>
 </div>
-
-<%= link_to 'Back', category_tasks_path(:category_id), class: "badge badge-info" %>
