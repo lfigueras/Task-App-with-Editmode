@@ -7,7 +7,7 @@
   <%= link_to('Login', new_user_session_path) %>  
   </li>
 <% end %>
-
+ <%= render "banner" %>
 
 <h3>All Tasks</h3>
 <table class="table table-hover">
@@ -22,7 +22,8 @@
   </thead>
      <% @tasks.each do |t| %>
 
-  <% if t.set_date === Date.today%>    
+<% if t.user_id === current_user.id %>
+  <% if t.set_date === Date.today%>   
    <tr>
       <td class="desc"><h6><%= link_to t.title, show_task_path(t) %></h6></td>
       <td class="desc"><h6><%= link_to Category.find(t.category_id).name, category_path(t.category_id) %></h6></td>
@@ -34,6 +35,7 @@
     </tr>
     <%end%>
   <% end %>
+<%end%>
 </table>
  <%=link_to 'Categories',  categories_path,  class:"badge badge-pill badge-secondary"%>
 <%= link_to 'Create new task',   new_category_task_path(:category_id), class: "badge badge-pill badge-secondary" %>
