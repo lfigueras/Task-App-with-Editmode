@@ -7,7 +7,9 @@
 
 
   <% @tasks.each do |t| %>
- <%if t.user_id === current_user.id%>
+
+  <%if t.user_id === current_user.id%>
+
   <div class="sticky-container">
   <div class="sticky-outer">
     <div class="sticky">
@@ -34,6 +36,6 @@
     </div>
   </div>
 </div>
-  <%end%>
+<%end%>
   <% end %><br>
 <br><%= link_to 'Back', category_tasks_path(:category_id), class: "badge badge-info" %>
