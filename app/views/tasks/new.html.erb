@@ -44,7 +44,7 @@
    <div class="select-container">
         <div class="select-child">
             <%= form.label :category %>
-            <%= form.select :category_id, @categories.map{ |c| [c.name, c.id] } %>
+            <%= form.select :category_id, @categories.filter_map{ |c| [c.name, c.id] if c.user_id === current_user.id  } %>
         </div>
         <div class="select-child">
             <%= form.label :date_deadline%>
