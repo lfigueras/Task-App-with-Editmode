@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_12_09_004213) do
 
+
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.text "description"
