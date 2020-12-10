@@ -7,9 +7,8 @@
   <%= link_to('Login', new_user_session_path) %>  
   </li>
 <% end %>
+<%=link_to 'View all tasks today',  category_tasks_path(:category_id), class: "badge badge-info" %>
 <%= render "banner" %>
-  
-
 <h3>Categories</h3><br>
 <table class="table table-hover">
  <thead class="thead-dark">
@@ -40,4 +39,3 @@
 
 <%= link_to 'New Category', new_category_path, class: "badge badge-info" %>
 <%= link_to 'Create new task', new_category_task_path(:category_id), class: "badge badge-info" %>
-<%=link_to 'View all tasks today',  category_tasks_path(:category_id), class: "badge badge-info" %>

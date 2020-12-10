@@ -16,12 +16,23 @@
               
                     <%=link_to 'View all tasks', category_tasks_path(:category_id), class: "badge badge-light" %>
                     <%=link_to 'Categories',  categories_path,  class:"badge badge-pill badge-secondary"%>
-
-
         </nav>
     </div><br><br>
 
 <%= form_with model: @category, class: "form", local: true do |form| %>
+ <% if @category.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@category.errors.count, "error") %> prohibited
+        this task from being saved:
+      </h2>
+      <ul>
+        <% @category.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul> 
+    </div>
+  <% end %>
 
 <h1>Don't just talk, act.</h1>
 <h6 class="text-muted">Create category</h6>

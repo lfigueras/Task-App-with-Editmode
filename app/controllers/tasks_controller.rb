@@ -11,13 +11,16 @@ class TasksController < ApplicationController
   end
 
   def create
+    @categories = Category.all
     @task = Task.new(task_params)
     @task.user_id = current_user.id
+    
     if @task.save
      redirect_to category_tasks_path
 
      else
         render 'new'
+  
    end 
   end
 
