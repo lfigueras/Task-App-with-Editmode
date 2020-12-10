@@ -1,22 +1,7 @@
-<% if user_signed_in? %> 
-<%= link_to('Logout', destroy_user_session_path, method: :delete, class: "badge badge-pill badge-danger" ) %>       
 
-<% else %>
-  <li>
-  <%= link_to('Login', new_user_session_path) %>  
-  </li>
-<% end %>
 
 <%= render "banner" %>
-<div class="container">
 
-    <div class="navbar ">
-        <nav class="navbar navbar-default">
-            <%= image_tag 'to-do-list (2).png', class:"img" %>
-                    <%=link_to 'View all tasks',  category_tasks_path, class: "badge badge-light" %>
-                    <%=link_to 'Categories',  categories_path,  class:"badge badge-pill badge-secondary"%>
-        </nav>
-    </div><br><br>
 <%= form_with model: [@category, @task],  :url => {:controller => 'tasks', :action => 'create'}, class: "form",  local: true do |form| %>
  
  <% if @task.errors.any? %>
