@@ -1,14 +1,6 @@
-<% if user_signed_in? %>
-  
-<%= link_to('Logout', destroy_user_session_path, method: :delete, class: "badge badge-pill badge-danger" ) %>       
 
-<% else %>
-  <li>
-  <%= link_to('Login', new_user_session_path) %>  
-  </li>
-<% end %>
-<%= link_to 'Back', category_tasks_path(:category_id), class: "badge badge-info" %>
 <%= render "banner" %>
+<h3>This is your task: <%= @task.title %>.</h3>
 <div class="show">
     <div class="sticky-container">
     <div class="sticky-outer">

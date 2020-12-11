@@ -1,22 +1,10 @@
-<% if user_signed_in? %> 
-<%= link_to('Logout', destroy_user_session_path, method: :delete, class: "badge badge-pill badge-danger" ) %>       
 
-<% else %>
-  <li>
-  <%= link_to('Login', new_user_session_path) %>  
-  </li>
-<% end %>
 
 <%= render "banner" %>
-<div class="container">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="top-img">
+  <path fill="#79a3b1" fill-opacity="1" d="M0,320L60,266.7C120,213,240,107,360,58.7C480,11,600,21,720,58.7C840,96,960,160,1080,197.3C1200,235,1320,245,1380,250.7L1440,256L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
+</svg>
 
-    <div class="navbar ">
-        <nav class="navbar navbar-default">
-            <%= image_tag 'to-do-list (2).png', class:"img" %>
-                    <%=link_to 'View all tasks',  category_tasks_path, class: "badge badge-light" %>
-                    <%=link_to 'Categories',  categories_path,  class:"badge badge-pill badge-secondary"%>
-        </nav>
-    </div><br><br>
 <%= form_with model: [@category, @task],  :url => {:controller => 'tasks', :action => 'create'}, class: "form",  local: true do |form| %>
  
  <% if @task.errors.any? %>
@@ -32,7 +20,7 @@
       </ul>
     </div>
   <% end %>
-<h6 class="text-muted">Create task</h6>
+<h1 class="text-muted">Create task</h1>
     <%=form.label :title%> : <br>
     <%=form.text_field :title, class: "form-control", placeholder: "Type here." %>
 
@@ -54,5 +42,3 @@
         <%= form.submit :Save, class: "btn btn-success"%>
     </div>
 <%end%>
-
-<%= image_tag 'to-do.png', class: "vector img-responsive"%>

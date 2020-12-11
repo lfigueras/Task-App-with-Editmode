@@ -1,8 +1,12 @@
   <%= render "banner" %>
-<h3>Edit Category</h3>
- 
-<%= form_with(model: @category, local: true) do |form| %>
- 
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="top-img">
+  <path fill="#79a3b1" fill-opacity="1" d="M0,288L1440,320L1440,0L0,0Z"></path>
+</svg>
+
+  <div class="form">
+<%= form_with(model: @category, local: true) do |form|%>
+ <h3>Edit Category</h3>
+
   <% if @category.errors.any? %>
     <div id="error_explanation">
       <h2>
@@ -16,7 +20,6 @@
       </ul>
     </div>
   <% end %>
- 
 
   <p>
     <%= form.label :name %><br>
@@ -32,8 +35,7 @@
     <div class="flexi2"><%= form.submit :Update, class: "btn btn-warning", style:"font-size:10px; "%></div>
     <div class="flexi2"><%= link_to 'Back', categories_path, class: "btn btn-primary", style:"font-size:10px;"%></div>
 </div>
-    
-     
- 
+       
+</div> 
  
 <% end %>

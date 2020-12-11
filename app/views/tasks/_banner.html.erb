@@ -1,1 +1,20 @@
-<h3>Hello, <%= current_user.email%></h3>
+<div class="nav-color">
+<ul class="nav nav-pills nav-fill">
+  <li class="navbar-brand">
+                    <%=link_to 'All tasks', category_tasks_path(:category_id), class: "link-color"%>
+    </li>
+    <li class="navbar-brand">           
+                    <%=link_to 'Categories',  categories_path, class: "link-color"%>
+     </li>
+      <li class="navbar-brand">           
+                  <% if user_signed_in? %> 
+<%= link_to('Logout', destroy_user_session_path, method: :delete,  class: "link-color" )%>       
+<% else %>
+  <li>
+  <%= link_to('Login', new_user_session_path) %>  
+  </li>
+<% end %>
+     </li>
+</ul>
+</div></br>
+<h3>Hello <%= current_user.username%>! </i></h3>

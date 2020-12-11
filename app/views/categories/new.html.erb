@@ -1,23 +1,8 @@
-<% if user_signed_in? %>
-  
-<%= link_to('Logout', destroy_user_session_path, method: :delete, class: "badge badge-pill badge-danger" ) %>       
 
-<% else %>
-  <li>
-  <%= link_to('Login', new_user_session_path) %>  
-  </li>
-<% end %>
 <%= render "banner" %>
-<div class="container">
-
-    <div class="navbar ">
-        <nav class="navbar navbar-default">
-            <%= image_tag 'to-do-list (2).png', class:"img" %>
-              
-                    <%=link_to 'View all tasks', category_tasks_path(:category_id), class: "badge badge-light" %>
-                    <%=link_to 'Categories',  categories_path,  class:"badge badge-pill badge-secondary"%>
-        </nav>
-    </div><br><br>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="top-img">
+  <path fill="#79a3b1" fill-opacity="1" d="M0,160L60,149.3C120,139,240,117,360,112C480,107,600,117,720,138.7C840,160,960,192,1080,224C1200,256,1320,288,1380,304L1440,320L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
+</svg>
 
 <%= form_with model: @category, class: "form", local: true do |form| %>
  <% if @category.errors.any? %>
@@ -34,8 +19,7 @@
     </div>
   <% end %>
 
-<h1>Don't just talk, act.</h1>
-<h6 class="text-muted">Create category</h6>
+<h1 class="text-muted">Create category</h1>
     <%=form.label :name%> : <br>
     <%=form.text_field :name, class: "form-control" %>
 
@@ -47,5 +31,4 @@
     </div>
 <%end%>
 
-    <%= image_tag '5272.png', class: "vector img-responsive"%>
 </div>

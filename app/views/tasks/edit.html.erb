@@ -1,6 +1,10 @@
-  <%= render "banner" %>
+  <%= render "banner" %><br>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="top-img">
+  <path fill="#79a3b1" fill-opacity="1" d="M0,320L720,96L1440,0L1440,0L720,0L0,0Z"></path>
+</svg>
 <h3>Edit your task.</h3>
- 
+  <div class="form">
 <%= form_with model: @task, url:  edit_task_path, local: true do |form| %>
    <% if @task.errors.any? %>
     <div id="error_explanation">
@@ -33,3 +37,4 @@
 </div>
     
 <% end %>
+</div>
