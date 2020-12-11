@@ -1,10 +1,41 @@
 *{
   margin: 0;
   padding: 0;
+  color: rgb(0, 0, 0);
+  font-family: 'Ubuntu', sans-serif;
+}
+:root{
+  --colorPrimary: #dff3e3;
+  --colorNavbar: #045762;
+}
+.login-bottom-img{
+  z-index: -100;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.top-img{
+  z-index: -100;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+.login{
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  box-shadow: 0px, 10px, 0px, rgb(70,70,70);
+  background-color: white;
+  padding: 50px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  text-align: center;
 }
 html{
-margin: 20px;
-background-image: url('background.png');
+margin: 50px;
+background-color: var(--colorPrimary);
 background-position: center;
 background-size: cover;
 background-attachment: fixed;
@@ -13,11 +44,28 @@ h3{
   text-align: center;
 }
 .nav-color{
-  border:1px solid rgb(0,0,0);padding-bottom:10px;
-
+ padding: 10px;
+}
+.link-color{
+ 
+  border-bottom: 1px solid #453886;
+  color: #453886;
+  padding-bottom: .25em;
+  text-decoration: none;
+  
+}
+.link-color:hover{
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23453886' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+  background-position: bottom;
+  background-repeat: repeat-x;
+  background-size: 20%;
+  border-bottom: 0;
+  padding-bottom: .3em;
+  text-decoration: none;
 }
 .form{ 
-  margin: 150px;
+  margin-left: 150px;
+  margin-right:150px;
 }
 .flexi{
   display: flex;
@@ -77,7 +125,7 @@ background: transparent;
   margin-bottom: 30px;
 }
 
-.btn-success {background-image: linear-gradient(to right, #4d292d 0%, #bfe9ff  51%, #ff6e7f  100%)}
+.btn-success {background-image: linear-gradient(to right, #64c0e1 0%, #bfe9ff  51%, #ff846e  100%)}
 .btn-success {
  border: none;
  margin: 10px;
@@ -112,7 +160,7 @@ background: transparent;
 
 }
 .show{
-  margin: 200px;
+  margin: 100px;
 }
 /* stickey notes */
 /* .main-container{
@@ -169,7 +217,6 @@ margin: 0 auto;
   display: flex;
   justify-content: left;
   align-items: center;
-  font-family: 'Itim';
   font-size: 15px;
   clip-path: url(#stickyClip);
 

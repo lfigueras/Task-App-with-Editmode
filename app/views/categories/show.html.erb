@@ -1,6 +1,7 @@
 <%= render "banner" %>
 
 <div class="display-name">
+<strong>All tasks under</strong>
 <strong>Category name:</strong>
   <%= @category.name %>
   <strong>&nbsp;&nbsp;&nbsp;&nbsp;Description:</strong>
@@ -40,4 +41,3 @@
 </div>
 <%end%>
   <% end %><br>
-<br><%= link_to 'Back', category_tasks_path(:category_id), class: "badge badge-info" %>

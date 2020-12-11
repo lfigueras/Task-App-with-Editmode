@@ -1,6 +1,9 @@
+<%= render "banner" %><br>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="top-img">
+  <path fill="#79a3b1" fill-opacity="1" d="M0,256L360,256L720,320L1080,224L1440,32L1440,0L1080,0L720,0L360,0L0,0Z"></path>
+</svg>
+<h3>All Categories</h3><br>
 
-<%= render "banner" %>
-<h3>Categories</h3><br>
 <table class="table table-hover">
  <thead class="thead-dark">
     <tr>
@@ -18,15 +21,14 @@
    <tr>
       <td class="desc"><h4><%=  c.name %></h4></td>
         <td class="desc"><h6><%= c.description %></h6></td>
-      <td><%= link_to 'Edit', edit_category_path(c), class: "badge badge-pill badge-warning"%></td>
+      <td><%= link_to 'Edit', edit_category_path(c), class: "btn btn-outline-secondary"%></td>
       <td><%= link_to  'Delete', category_path(c),
               method: :delete,
-              data: { confirm: 'Are you sure you want this to delete?' }, class: "badge badge-pill badge-danger" %><td>
+              data: { confirm: 'Are you sure you want this to delete?' }, class:"btn btn-outline-danger btn-rounded waves-effect" %><td>
     </tr>
   <% end %>
   <% end %>
 </table>
 
-
-<%= link_to 'New Category', new_category_path, class: "badge badge-info" %>
-<%= link_to 'Create new task', new_category_task_path(:category_id), class: "badge badge-info" %>
+<%= link_to 'New Category', new_category_path, class: "btn btn-outline-success" %>
+<%= link_to 'New Task', new_category_task_path(:category_id), class: "btn btn-outline-success" %>

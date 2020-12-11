@@ -1,7 +1,10 @@
 
- <%= render "banner" %>
+ <%= render "banner" %><br>
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="top-img">
+  <path fill="#79a3b1" fill-opacity="1" d="M0,320L360,288L720,96L1080,288L1440,0L1440,0L1080,0L720,0L360,0L0,0Z"></path>
+</svg>
 
-<h3>All Tasks</h3>
+<h3>Yay! your tasks for today</h3>
 <table class="table table-hover">
  <thead class="thead-dark">
   <tr>
@@ -10,6 +13,7 @@
     <th scope="col">Deadline</th>
     <th scope="col">Actions</th>
     <th scope="col"></th>
+  
   </tr>
   </thead>
      <% @tasks.each do |t| %>
@@ -17,17 +21,17 @@
 <% if t.user_id === current_user.id %>
   <% if t.set_date === Date.today%>   
    <tr>
-      <td class="desc"><h6><%= link_to t.title, show_task_path(t) %></h6></td>
-      <td class="desc"><h6><%= link_to Category.find(t.category_id).name, category_path(t.category_id) %></h6></td>
+      <td class="desc"><h6><%= link_to t.title, show_task_path(t), class: "link-color" %></h6></td>
+      <td class="desc"><h6><%= link_to Category.find(t.category_id).name, category_path(t.category_id), class: "link-color" %></h6></td>
       <td class="desc"><h6><%= t.set_date%></h6></td>
-      <td><%= link_to 'Edit', edit_task_path(t), class: "badge badge-pill badge-warning"%></td>
-      <td><%= link_to 'Delete', category_task_path(:category_id, t),
+      <td><%= link_to 'Edit task', edit_task_path(t), class: "btn btn-outline-secondary"%></td>
+      <td><%= link_to 'Delete task', category_task_path(:category_id, t),
               method: :delete,
-              data: { confirm: 'Are you sure you want this to delete?' }, class: "badge badge-pill badge-danger" %></td>
+              data: { confirm: 'Are you sure you want this to delete?' }, class: "btn btn-outline-danger" %></td>
     </tr>
     <%end%>
   <% end %>
 <%end%>
 </table>
- <%=link_to 'Categories',  categories_path,  class:"badge badge-pill badge-secondary"%>
-<%= link_to 'Create new task',   new_category_task_path(:category_id), class: "badge badge-pill badge-secondary" %>
+
+<%= link_to 'Create new task',   new_category_task_path(:category_id), class: "btn btn-outline-success" %>
