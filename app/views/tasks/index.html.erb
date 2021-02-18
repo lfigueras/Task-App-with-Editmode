@@ -5,6 +5,9 @@
 </svg>
 
 <h3>Yay! your tasks for today</h3>
+
+<%= E('setup_guide_example_chunk') %>
+
 <table class="table table-hover">
  <thead class="thead-dark">
   <tr>
@@ -35,3 +38,4 @@
 </table>
 
 <%= link_to 'Create new task',   new_category_task_path(:category_id), class: "btn btn-outline-success" %>
+<%=@page_title%>
