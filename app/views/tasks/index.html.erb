@@ -4,17 +4,16 @@
   <path fill="#79a3b1" fill-opacity="1" d="M0,320L360,288L720,96L1080,288L1440,0L1440,0L1080,0L720,0L360,0L0,0Z"></path>
 </svg>
 
-<h3>Yay! your tasks for today</h3>
+<h3><%= E('cnk_8dfd9750565a1f9388cb') %> </h3>
 
-<%= E('setup_guide_example_chunk') %>
 
 <table class="table table-hover">
  <thead class="thead-dark">
   <tr>
-    <th scope="col">Title</th> 
-    <th scope="col">Category</th>
-    <th scope="col">Deadline</th>
-    <th scope="col">Actions</th>
+    <th scope="col"><%= E('cnk_e8dd11262755fcd4aba9') %></th>
+    <th scope="col"><%= E('cnk_3650c540f55ca2edcd3f') %></th>
+    <th scope="col"><%= E('cnk_e42fb8b42f04e5004bb7') %></th>
+    <th scope="col"><%= E('cnk_a2ec7fe373bdd098d0e1') %></th>
     <th scope="col"></th>
   
   </tr>
@@ -27,8 +26,8 @@
       <td class="desc"><h6><%= link_to t.title, show_task_path(t), class: "link-color" %></h6></td>
       <td class="desc"><h6><%= link_to Category.find(t.category_id).name, category_path(t.category_id), class: "link-color" %></h6></td>
       <td class="desc"><h6><%= t.set_date%></h6></td>
-      <td><%= link_to 'Edit task', edit_task_path(t), class: "btn btn-outline-secondary"%></td>
-      <td><%= link_to 'Delete task', category_task_path(:category_id, t),
+      <td><%= link_to  E('cnk_4ecb378272b96d88940b'), edit_task_path(t), class: "btn btn-outline-secondary"%></td>
+      <td><%= link_to E('cnk_0c15b550dd5ea7909f1d'), category_task_path(:category_id, t),
               method: :delete,
               data: { confirm: 'Are you sure you want this to delete?' }, class: "btn btn-outline-danger" %></td>
     </tr>
@@ -37,5 +36,5 @@
 <%end%>
 </table>
 
-<%= link_to 'Create new task',   new_category_task_path(:category_id), class: "btn btn-outline-success" %>
+<%= link_to E('cnk_93aa8664571df030895a'),   new_category_task_path(:category_id), class: "btn btn-outline-success" %>
 <%=@page_title%>

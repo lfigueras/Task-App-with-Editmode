@@ -1,11 +1,11 @@
 <%= render "banner" %>
 
 <div class="display-name">
-<strong>All tasks under</strong>
-<strong>Category name:</strong>
-  <%= @category.name %>
-  <strong>&nbsp;&nbsp;&nbsp;&nbsp;Description:</strong>
-  <%= @category.description %>
+<strong><%= E('cnk_22cefcbd9c7116349333') %></strong>
+<strong><%= E('cnk_140c7ebde30fa4dd3dd7') %></strong>
+  <%=  E('cnk_145eb462e278f3db2a5a', variables: {title: @category.name } ) %>
+  <strong>&nbsp;&nbsp;&nbsp;&nbsp;<%= E('cnk_aa2447cad6bdef42d243') %>:</strong>
+  <%= E('cnk_145eb462e278f3db2a5a', variables: {title: @category.description} ) %>
 </div>
 
 
@@ -30,7 +30,7 @@
       <div class="card-container">
         <div class="sticky-content">
             <table class="tb">
-              <tr><th><h6>Deadline: <%=t.set_date%></h6> </th><tr>
+      
               <tr><th><%= t.title %></th></tr>
               <tr><td><%= t.details %></td></tr>
             </table>    

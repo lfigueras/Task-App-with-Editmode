@@ -59,3 +59,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "editmode", "~> 1.3"
+gem 'pry', '~> 0.13.1'

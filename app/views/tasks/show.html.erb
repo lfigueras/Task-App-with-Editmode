@@ -1,6 +1,6 @@
 
 <%= render "banner" %>
-<h3>This is your task: <%= @task.title %>.</h3>
+<h3><%= E('cnk_bac473f6a7f2591a45e5') %> <%= E('cnk_145eb462e278f3db2a5a', variables: {title: @task.title} ) %>.</h3>
 <div class="show">
     <div class="sticky-container">
     <div class="sticky-outer">
@@ -19,10 +19,11 @@
         <div class="card-container">
             <div class="sticky-content">
                 <table class="tb">
-                <tr><th><h6>Deadline: <%=@task.set_date%></h6> </th><tr>
-                <tr><th><%= @task.title %></th></tr>
-                <tr><td><%= @task.details %></td></tr>
+                <tr><th><h6><%= E('cnk_0010d8a7206d53389cb7') %> <%= E('cnk_145eb462e278f3db2a5a', variables: {title: @task.set_date.strftime("%a, %d %b %Y")} ) %></h6> </th><tr>
+                <tr><th><%=  E('cnk_145eb462e278f3db2a5a', variables: {title: @task.title} )  %></th></tr>
+                <tr><td><%= E('cnk_145eb462e278f3db2a5a', variables: {title: @task.details} )  %></td></tr>
                 </table>    
+
             </div>
         </div>
         </div>

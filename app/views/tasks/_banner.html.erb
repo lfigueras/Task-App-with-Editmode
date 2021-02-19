@@ -1,20 +1,20 @@
 <div class="nav-color">
 <ul class="nav nav-pills nav-fill">
   <li class="navbar-brand">
-                    <%=link_to 'All tasks', category_tasks_path(:category_id), class: "link-color"%>
+                    <%=link_to E('cnk_623e3af7a72cb6936e32'), category_tasks_path(:category_id), class: "link-color"%>
     </li>
     <li class="navbar-brand">           
-                    <%=link_to 'Categories',  categories_path, class: "link-color"%>
+                    <%=link_to E('cnk_3bfe487fd1e1b48c58e4'),  categories_path, class: "link-color"%>
      </li>
       <li class="navbar-brand">           
                   <% if user_signed_in? %> 
-<%= link_to('Logout', destroy_user_session_path, method: :delete,  class: "link-color" )%>       
+<%= link_to(E('cnk_dd53411f5daaf5f282ee'), destroy_user_session_path, method: :delete,  class: "link-color" )%>       
 <% else %>
   <li>
-  <%= link_to('Login', new_user_session_path) %>  
+  <%= link_to(E('cnk_fba443d7612a7aeb21ed'), new_user_session_path) %>  
   </li>
 <% end %>
      </li>
 </ul>
 </div></br>
-<h3>Hello <%= current_user.username%>! </i></h3>
+<h3><%= E('cnk_232727782c0abdc10acd', variables: {name: current_user.username } ) %></h3>
